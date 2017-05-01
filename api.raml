@@ -1,0 +1,22 @@
+#%RAML 1.0
+title: Path of Exile Item Api
+
+types:
+  Item:
+    type: object
+    properties:
+      id: string
+      className: string
+      rarity: integer
+      base: string
+      name: string
+      width: integer
+      height: integer
+/items/{className}:
+  get:
+    description: Returns up to 50 items with a matching className
+    responses:
+      200:
+        body:
+          application/json:
+            type: Item
